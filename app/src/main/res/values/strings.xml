@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">AI Powered Women Safety</string>
+    <string name="tagline">Your Safety, One Tap Away</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="login_subtitle">Login to stay safe</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="register_prompt">New Here? Register</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="already_member">Already Member? Login</string>
+
+    <string name="dashboard_title">Women Safety Dashboard</string>
+    <string name="sos">SOS</string>
+    <string name="emergency_instruction">Tap or Shake Phone to Send Emergency Alert</string>
+    <string name="status_safe">Status: Safe</string>
+    <string name="emergency_contacts">Emergency Contacts</string>
+    <string name="live_location">Live Location</string>
+    <string name="live_location_status">Live Location Status</string>
+    <string name="safety_tips">Safety Tips</string>
+    <string name="alert_history">Alert History</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_contacts">Contacts</string>
+    <string name="nav_history">History</string>
+    <string name="nav_settings">Settings</string>
+    <string name="settings">Settings</string>
+
+    <string name="add_contact">Add Contact</string>
+    <string name="share_live_location">Share Live Location</string>
+    <string name="about_app">About App</string>
+    <string name="how_to_use">How to Use</string>
+    <string name="about_desc">This application helps women send emergency alerts, share live location, and notify trusted contacts in dangerous situations.</string>
+    <string name="usage_steps">1. Add emergency contacts\n2. Press the SOS button or shake the phone\n3. The app will send an alert and live location to contacts</string>
+
+    <string name="tip_1">Avoid isolated areas at night</string>
+    <string name="tip_2">Share travel details with family</string>
+    <string name="tip_3">Keep GPS enabled</string>
+    <string name="tip_4">Use SOS during emergencies</string>
+
+    <string name="enable_shake">Enable Shake Detection</string>
+    <string name="enable_voice">Enable Voice Command (\"Help me\")</string>
+    <string name="enable_alarm">Enable Alarm Sound</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="logout">Logout</string>
+
+    <string name="emergency_alert">EMERGENCY ALERT</string>
+    <string name="alert_sent">Alert Sent to Emergency Contacts</string>
+    <string name="sharing_location_progress">Sharing Live Location...</string>
+    <string name="stop_alert">STOP ALERT</string>
+</resources>
