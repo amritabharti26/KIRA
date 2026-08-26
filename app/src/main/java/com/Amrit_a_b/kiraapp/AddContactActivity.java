@@ -3,6 +3,7 @@ package com.Amrit_a_b.kiraapp;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -17,9 +18,7 @@ import org.json.JSONObject;
 public class AddContactActivity extends AppCompatActivity {
 
     private EditText etName, etPhone, etPriority;
-    private MaterialToolbar toolbar;
-    private Button btnSave;
-    
+
     private boolean isEditMode = false;
     private int editPosition = -1;
 
@@ -28,7 +27,7 @@ public class AddContactActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_contact);
 
-        toolbar = findViewById(R.id.toolbar);
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
         if (toolbar != null) {
             toolbar.setNavigationOnClickListener(v -> finish());
         }
@@ -36,7 +35,7 @@ public class AddContactActivity extends AppCompatActivity {
         etName = findViewById(R.id.et_name);
         etPhone = findViewById(R.id.et_phone);
         etPriority = findViewById(R.id.et_priority);
-        btnSave = findViewById(R.id.btn_add_contact);
+        Button btnSave = findViewById(R.id.btn_add_contact);
 
         // Check if we are in edit mode
         if (getIntent().hasExtra("isEdit")) {
@@ -46,8 +45,8 @@ public class AddContactActivity extends AppCompatActivity {
             etPhone.setText(getIntent().getStringExtra("phone"));
             etPriority.setText(String.valueOf(getIntent().getIntExtra("priority", 1)));
             
-            if (toolbar != null) toolbar.setTitle("Edit Contact");
-            btnSave.setText("Update Contact");
+            if (toolbar != null) toolbar.setTitle(R.string.edit_contact);
+            btnSave.setText(R.string.update_contact);
         }
 
         btnSave.setOnClickListener(v -> saveContact());
@@ -99,7 +98,7 @@ public class AddContactActivity extends AppCompatActivity {
             prefs.edit().putString("contact_list", array.toString()).apply();
             finish();
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("AddContact", "Error saving contact", e);
             Toast.makeText(this, "Error saving contact", Toast.LENGTH_SHORT).show();
         }
     }

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="14dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:gravity="center"
+            android:text="🎥"
+            android:textSize="22sp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingStart="10dp"
+            android:paddingEnd="8dp">
+
+            <TextView
+                android:id="@+id/tv_evidence_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="middle"
+                android:maxLines="1"
+                android:text="KIRA_VIDEO_20260821.mp4"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_evidence_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="🎥 Video + Audio"
+                android:textColor="#555555"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/tv_evidence_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="21 Aug 2026, 10:05 AM"
+                android:textColor="#777777"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/tv_evidence_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2.4 MB"
+                android:textColor="#777777"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_play_evidence"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Play recording"
+            android:src="@android:drawable/ic_media_play"/>
+
+        <ImageButton
+            android:id="@+id/btn_delete_evidence"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Delete recording"
+            android:src="@android:drawable/ic_menu_delete"/>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

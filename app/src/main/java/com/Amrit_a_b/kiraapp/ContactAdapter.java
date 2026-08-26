@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.util.List;
 
@@ -84,9 +84,8 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
         }
 
         // Delete button
-        holder.ivDelete.setOnClickListener(v -> {
-            deleteContact(position);
-        });
+        holder.ivDelete.setOnClickListener(v ->
+            deleteContact(position));
     }
 
     private void deleteContact(int position) {
@@ -112,7 +111,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
             Toast.makeText(context, "Contact Deleted", Toast.LENGTH_SHORT).show();
             
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("ContactAdapter", "Error deleting contact", e);
             Toast.makeText(context, "Error deleting contact", Toast.LENGTH_SHORT).show();
         }
     }

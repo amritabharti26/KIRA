@@ -2,6 +2,8 @@ package com.Amrit_a_b.kiraapp;
 
 import android.location.Location;
 
+import androidx.annotation.NonNull;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -11,7 +13,7 @@ import java.util.List;
 
 public class DangerZoneDetector {
 
-    private static List<DangerZone> dangerZones = new ArrayList<>();
+    private static final List<DangerZone> dangerZones = new ArrayList<>();
 
     public static void loadDangerZones() {
 
@@ -21,7 +23,7 @@ public class DangerZoneDetector {
 
         ref.addListenerForSingleValueEvent(new com.google.firebase.database.ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot snapshot) {
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 dangerZones.clear();
 
@@ -36,7 +38,7 @@ public class DangerZoneDetector {
             }
 
             @Override
-            public void onCancelled(com.google.firebase.database.DatabaseError error) {
+            public void onCancelled(@NonNull com.google.firebase.database.DatabaseError error) {
             }
         });
     }

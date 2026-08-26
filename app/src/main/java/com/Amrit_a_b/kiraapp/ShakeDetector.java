@@ -17,7 +17,7 @@ public class ShakeDetector implements SensorEventListener {
         void onShake();
     }
 
-    private OnShakeListener listener;
+    private final OnShakeListener listener;
 
     public ShakeDetector(OnShakeListener listener) {
         this.listener = listener;

@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
+
+    <!-- ===================================================== -->
+    <!-- APP BAR -->
+    <!-- ===================================================== -->
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
@@ -20,19 +26,31 @@
             app:navigationIconTint="@color/primary"
             app:title="Profile Settings"
             app:titleTextColor="@color/black" />
+
     </com.google.android.material.appbar.AppBarLayout>
+
+
+    <!-- ===================================================== -->
+    <!-- PROFILE CONTENT -->
+    <!-- ===================================================== -->
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
-        app:layout_constraintTop_toBottomOf="@id/appBar">
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/appBar"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="24dp">
+
+
+            <!-- ================================================= -->
+            <!-- PROFILE IMAGE -->
+            <!-- ================================================= -->
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="120dp"
@@ -47,7 +65,13 @@
                     android:padding="24dp"
                     android:src="@android:drawable/ic_menu_my_calendar"
                     app:tint="@color/primary" />
+
             </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- ================================================= -->
+            <!-- NAME -->
+            <!-- ================================================= -->
 
             <TextView
                 android:id="@+id/tv_profile_name"
@@ -60,6 +84,11 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
+
+            <!-- ================================================= -->
+            <!-- EMAIL -->
+            <!-- ================================================= -->
+
             <TextView
                 android:id="@+id/tv_profile_email"
                 android:layout_width="wrap_content"
@@ -70,18 +99,87 @@
                 android:textColor="@color/secondary_text"
                 android:textSize="16sp" />
 
+
+            <!-- ================================================= -->
+            <!-- GIVE FEEDBACK -->
+            <!-- ================================================= -->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_give_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="32dp"
+                android:text="Give Feedback"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
+                android:backgroundTint="@color/white"
+                app:strokeColor="@color/primary"
+                app:strokeWidth="1dp"
+                app:cornerRadius="12dp" />
+
+
+            <!-- ================================================= -->
+            <!-- ADMIN VIEW USER FEEDBACK -->
+            <!-- ================================================= -->
+            <!-- Hidden by default.
+                 ProfileActivity makes it visible only for admin. -->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_view_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:text="View User Feedback"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
+                android:backgroundTint="@color/white"
+                android:visibility="gone"
+                app:strokeColor="@color/primary"
+                app:strokeWidth="1dp"
+                app:cornerRadius="12dp" />
+
+
+            <!-- ================================================= -->
+            <!-- ABOUT KIRA GUARDIAN -->
+            <!-- ================================================= -->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_about"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/about_kira_title"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
+                android:backgroundTint="@color/white"
+                app:strokeColor="@color/primary"
+                app:strokeWidth="1dp"
+                app:cornerRadius="12dp" />
+
+
+            <!-- ================================================= -->
+            <!-- LOG OUT -->
+            <!-- ================================================= -->
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_logout"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="16dp"
                 android:text="Log Out"
                 android:textColor="@color/white"
+                android:textSize="16sp"
                 android:backgroundTint="@color/primary"
                 app:cornerRadius="12dp" />
 
         </LinearLayout>
+
     </ScrollView>
+
+
+    <!-- ===================================================== -->
+    <!-- BOTTOM NAVIGATION -->
+    <!-- ===================================================== -->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

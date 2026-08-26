@@ -41,13 +41,19 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
     implementation(libs.firebase.database)
+    implementation(libs.preference)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
+
+
     // Using OpenStreetMap (OSM) - Free and no API key required
     implementation("org.osmdroid:osmdroid-android:6.1.18")
     implementation("com.google.android.gms:play-services-location:21.0.1")
+
+
+    implementation("androidx.core:core-splashscreen:1.2.0")
 
 }

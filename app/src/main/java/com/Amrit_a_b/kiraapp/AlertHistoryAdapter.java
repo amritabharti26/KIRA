@@ -14,7 +14,7 @@ import java.util.List;
 
 public class AlertHistoryAdapter extends RecyclerView.Adapter<AlertHistoryAdapter.ViewHolder> {
 
-    private List<Alert> alertList;
+    private final List<Alert> alertList;
 
     public AlertHistoryAdapter(List<Alert> alertList) {
         this.alertList = alertList;

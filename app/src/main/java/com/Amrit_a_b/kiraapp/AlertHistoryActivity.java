@@ -28,11 +28,9 @@ import java.util.List;
 
 public class AlertHistoryActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
     private AlertHistoryAdapter adapter;
     private List<Alert> alertList;
     private DatabaseReference mDatabase;
-    private FirebaseAuth mAuth;
     private TextView tvEmpty;
 
     // FIXED FIREBASE URL
@@ -48,7 +46,7 @@ public class AlertHistoryActivity extends AppCompatActivity {
             toolbar.setNavigationOnClickListener(v -> finish());
         }
 
-        recyclerView = findViewById(R.id.rv_history);
+        RecyclerView recyclerView = findViewById(R.id.rv_history);
         tvEmpty = findViewById(R.id.tv_empty);
         
         alertList = new ArrayList<>();
@@ -60,7 +58,7 @@ public class AlertHistoryActivity extends AppCompatActivity {
         // Load Offline History First
         loadLocalHistory();
 
-        mAuth = FirebaseAuth.getInstance();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
         if (mAuth.getCurrentUser() != null) {
             try {
                 String userId = mAuth.getCurrentUser().getUid();
@@ -90,7 +88,7 @@ public class AlertHistoryActivity extends AppCompatActivity {
             adapter.notifyDataSetChanged();
             updateEmptyState();
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("AlertHistory", "Error loading local alert history", e);
         }
     }
 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Location Permissions -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
@@ -21,8 +20,30 @@
     <!-- Camera for Evidence Recording -->
     <uses-permission android:name="android.permission.CAMERA"/>
 
-    <!-- Foreground service for tracking -->
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
+
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+
+
+    <!-- Optional hardware features -->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
 
     <!-- For Android 13+ Notifications -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
@@ -32,6 +53,7 @@
             <action android:name="android.speech.RecognitionService" />
         </intent>
     </queries>
+
 
     <application
         android:allowBackup="true"
@@ -58,6 +80,18 @@
         <activity android:name=".LoginActivity"/>
         <activity android:name=".RegisterActivity"/>
 
+        <!-- Safety Setup -->
+        <activity
+            android:name=".SafetySetupActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".EvidenceRecordingService"
+            android:exported="false"
+            android:foregroundServiceType="camera|microphone" />
+
+
+
         <!-- Main Dashboard -->
         <activity android:name=".MainActivity"/>
 
@@ -74,9 +108,12 @@
         <!-- Alert History -->
         <activity android:name=".AlertHistoryActivity"/>
 
+        <activity
+            android:name=".EvidenceActivity"
+            android:exported="false" />
+
         <!-- SOS Emergency Alert -->
-        <activity android:name=".EmergencyAlertActivity"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".EmergencyAlertActivity"/>
 
         <!-- Danger Zones -->
         <activity android:name=".DangerZonesActivity"/>
@@ -84,8 +121,19 @@
         <!-- Profile -->
         <activity android:name=".ProfileActivity"/>
 
+        <!-- Feedback -->
+        <activity
+            android:name=".FeedbackActivity"
+            android:exported="false" />
+
+        <!-- Admin Feedback -->
+        <activity
+            android:name=".AdminFeedbackActivity"
+            android:exported="false" />
+
         <!-- About -->
-        <activity android:name=".AboutActivity"/>
+        <activity android:name=".AboutActivity"
+            android:exported="false" />
 
     </application>
 

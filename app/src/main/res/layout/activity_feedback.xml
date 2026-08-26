@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- ================================================= -->
+        <!-- HEADER -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Give Feedback"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="8dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Help us improve Kira Guardian"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="32dp"/>
+
+
+        <!-- ================================================= -->
+        <!-- RATING -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="How would you rate Kira?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="12dp"/>
+
+
+        <RatingBar
+            android:id="@+id/rating_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="1"
+            android:rating="0"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="32dp"
+            android:progressTint="#FFD700"
+            android:secondaryProgressTint="#FFD700"
+            android:indeterminateTint="#FFD700"/>
+
+
+        <!-- ================================================= -->
+        <!-- FEEDBACK -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tell us about your experience"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="12dp"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Write your feedback"
+            app:boxBackgroundMode="outline"
+            android:layout_marginBottom="28dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:maxLength="1000"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- ================================================= -->
+        <!-- SUBMIT -->
+        <!-- ================================================= -->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_submit_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Submit Feedback"
+            android:textSize="16sp"
+            app:cornerRadius="16dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

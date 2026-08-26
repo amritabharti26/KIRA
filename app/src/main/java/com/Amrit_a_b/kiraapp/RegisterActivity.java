@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -38,9 +39,17 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void registerUser() {
 
-        String name = etName.getText().toString().trim();
-        String email = etEmail.getText().toString().trim();
-        String password = etPassword.getText().toString().trim();
+        String name = etName.getText() != null
+                ? etName.getText().toString().trim()
+                : "";
+
+        String email = etEmail.getText() != null
+                ? etEmail.getText().toString().trim()
+                : "";
+
+        String password = etPassword.getText() != null
+                ? etPassword.getText().toString().trim()
+                : "";
 
         if (TextUtils.isEmpty(name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
             Toast.makeText(this, "All fields are required", Toast.LENGTH_SHORT).show();
@@ -57,7 +66,18 @@ public class RegisterActivity extends AppCompatActivity {
 
                     if (task.isSuccessful()) {
 
-                        String userId = mAuth.getCurrentUser().getUid();
+                        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+                        if (currentUser == null) {
+                            Toast.makeText(
+                                    this,
+                                    "Registration completed, but user information was unavailable.",
+                                    Toast.LENGTH_LONG
+                            ).show();
+                            return;
+                        }
+
+                        String userId = currentUser.getUid();
 
                         User user = new User(name, email);
 
@@ -70,9 +90,17 @@ public class RegisterActivity extends AppCompatActivity {
 
                     } else {
 
-                        Toast.makeText(this,
-                                "Registration Failed: " + task.getException().getMessage(),
-                                Toast.LENGTH_LONG).show();
+                        Exception exception = task.getException();
+
+                        String errorMessage = exception != null
+                                ? exception.getMessage()
+                                : "Unknown error";
+
+                        Toast.makeText(
+                                this,
+                                "Registration Failed: " + errorMessage,
+                                Toast.LENGTH_LONG
+                        ).show();
                     }
                 });
     }

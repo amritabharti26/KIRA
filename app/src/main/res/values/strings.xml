@@ -48,6 +48,120 @@
 
     <string name="emergency_alert">EMERGENCY ALERT</string>
     <string name="alert_sent">Alert Sent to Emergency Contacts</string>
-    <string name="sharing_location_progress">Sharing Live Location...</string>
+    <string name="sharing_location_progress">Sharing Live Location…</string>
     <string name="stop_alert">STOP ALERT</string>
+
+    <string name="edit_contact">Edit Contact</string>
+    <string name="update_contact">Update Contact</string>
+
+    <string name="voice_sos_not_available">Voice SOS: Not Available</string>
+    <string name="voice_sos_listening">Voice SOS: Listening…</string>
+    <string name="hearing_text">Hearing: %1$s</string>
+
+    <string name="safety_setup_title">Complete Your Safety Setup</string>
+
+    <string name="safety_setup_description">
+    Set up KIRA once so emergency actions can work quickly without interrupting you during an SOS.
+</string>
+
+    <string name="evidence_recording_title">
+    Evidence Recording
+</string>
+
+    <string name="video_audio_option">
+    Video + Audio
+</string>
+
+    <string name="audio_only_option">
+    Audio Only
+</string>
+
+    <string name="permission_setup_description">
+    KIRA needs the required permissions before you use emergency features.
+</string>
+
+    <string name="permission_request_message">
+    Please allow the requested permissions to complete safety setup.
+</string>
+
+    <string name="permission_required_message">
+    Required permissions were not granted. Please allow them to use all safety features.
+</string>
+
+    <string name="continue_setup">
+    Continue Setup
+</string>
+
+    <string name="safety_setup_complete">
+    Safety setup completed
+</string>
+    <string name="contacts">Contacts</string>
+
+    <string name="alert_countdown">
+    Alert will trigger in %1$ds\nTap STOP to cancel
+</string>
+
+
+    <!-- ========================================================= -->
+    <!-- ABOUT KIRA GUARDIAN -->
+    <!-- ========================================================= -->
+
+    <string name="about_kira_title">About Kira App</string>
+
+    <string name="kira_app">Kira</string>
+
+    <string name="kira_tagline">Women Safety App</string>
+
+    <string name="about_kira_heading">About Kira</string>
+
+    <string name="about_kira_description">
+    Kira is an AI-powered mobile safety application
+    designed to provide quick assistance during emergency
+    situations. It combines smart SOS triggers, emergency
+    communication, location services, and evidence recording
+    to help users respond quickly when they feel unsafe.
+</string>
+
+    <string name="key_features">Key Features</string>
+
+    <string name="key_features_list">
+    • Multi-Trigger SOS
+    • AI Voice SOS
+    • Smart Shake Detection
+    • Emergency SMS &amp; Calling
+    • Live Location Sharing
+    • Evidence Recording
+    • AI Danger Zones
+    • Alert History
+    • Offline Safety Support
+</string>
+
+    <string name="technology">Technology</string>
+
+    <string name="technology_list">
+    • Android Studio &amp; Java
+    • Firebase Authentication
+    • Firebase Realtime Database
+    • OpenStreetMap
+    • Smartphone Sensors
+    • Speech Recognition
+</string>
+
+    <string name="app_version">Version 1.0</string>
+
+    <string name="developed_for_women_safety">
+    Developed with ❤️ for Women Safety
+</string>
+
+    <string name="safety_disclaimer">
+    Kira is designed to assist during emergencies
+    and should not replace local emergency services or
+    law enforcement. Always contact emergency services
+    whenever necessary.
+</string>
+
+
+
+
+
 </resources>
